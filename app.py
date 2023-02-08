@@ -30,8 +30,8 @@ def endpoint(id=None):
         return jsonify(model_to_dict(States.get(States.id == id)))
     else:
         States_list = []
-        for States in States.select():
-            States_list.append(model_to_dict(States))
+        for states in States.select():
+            States_list.append(model_to_dict(states))
         return jsonify(States_list)
 
   if request.method =='PUT':
